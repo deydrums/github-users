@@ -1,0 +1,33 @@
+.btn{
+    background-color:transparent;
+    border: none;
+    color: #fff;
+    cursor:pointer;
+    font-size:15px;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        color: darken($color: white, $amount: 10);
+    }
+}
+
+.btn-submit{
+    background-color: $blue;
+    border-radius: 10px;
+    text-align: center;
+    &:disabled{
+        background-color: lighten($color: $blue, $amount: 15)
+    }
+    &:hover{
+        background-color: darken($color: $blue, $amount: 15);
+    }
+}
+
+.btn-block{
+    width:100%;
+}
