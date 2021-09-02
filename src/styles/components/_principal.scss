@@ -136,10 +136,15 @@
                 justify-content: center;
                 align-items: center;
                 .p__img-cont{
-                    background-color: $primary;
                     width: 90px;
                     height: 90px;
                     border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
             .p_box-usr-d{

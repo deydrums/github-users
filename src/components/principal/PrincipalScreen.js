@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { assets } from '../../helpers/getAssets'
 
 export const PrincipalScreen = () => {
     return (
@@ -49,7 +50,7 @@ export const PrincipalScreen = () => {
                             <div className = "p__box-3-a">
                                 <div className = "p_box-img">
                                     <div className = "p__img-cont">
-
+                                        <img src = {assets(`./GitHub.png`).default} alt='profile-img'/>
                                     </div>
                                 </div>
                                 <div className = "p_box-usr-d">
