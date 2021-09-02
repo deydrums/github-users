@@ -3,9 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { UserScreen } from './UserScreen';
 import { useForm } from '../../hooks/useForm';
+import { useDispatch } from 'react-redux';
+import { startSearchUser } from '../../actions/user';
 
 
 export const PrincipalScreen = () => {
+
+    const dispatch = useDispatch();
 
     const [formValues, handleInputChange, reset] = useForm({
         user: 'deydrums',
@@ -16,6 +20,7 @@ export const PrincipalScreen = () => {
     const handleSearchSubmit = (e) =>{
         e.preventDefault();
         console.log(formValues);
+        dispatch(startSearchUser(formValues));
     }
 
     return (
