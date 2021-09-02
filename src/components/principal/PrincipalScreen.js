@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { UserScreen } from './UserScreen';
@@ -50,6 +50,7 @@ export const PrincipalScreen = () => {
                                     <button
                                         type="submit"
                                         className="btn btn-submit"
+                                        disabled={!user}
                                     >
                                         Buscar
                                     </button>
