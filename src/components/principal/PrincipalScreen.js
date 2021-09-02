@@ -15,7 +15,21 @@ export const PrincipalScreen = () => {
 
                 <div className ="p__box-c p__box-2">
                     <div className = "p__box-2-c">
-                        <FontAwesomeIcon icon={faSearch}/>
+                        <div className = "p__search">
+                            <div className = "p__search-1">
+                                <FontAwesomeIcon icon={faSearch}/>
+                            </div>
+                            <div className = "p__search-2">
+                                <input
+                                    type="text"
+                                    placeholder="Buscar usuario de GitHub..."
+                                >
+                                
+                                </input>
+                            </div>
+                            <div className = "p__search-3"></div>
+
+                        </div>
                     </div>
                 </div>
 
