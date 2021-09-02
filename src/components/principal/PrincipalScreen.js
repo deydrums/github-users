@@ -2,7 +2,7 @@ import React from 'react'
 
 export const PrincipalScreen = () => {
     return (
-        <div>
+        <div className = 'principal__title'>
             Principal Screen
         </div>
     )
