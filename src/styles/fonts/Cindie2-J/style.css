@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Cindie 2';
+    src: local('Cindie 2 J'), local('Cindie-2-J'),
+        url('Cindie2-J.woff2') format('woff2'),
+        url('Cindie2-J.woff') format('woff'),
+        url('Cindie2-J.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
