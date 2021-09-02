@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { UserScreen } from './UserScreen';
