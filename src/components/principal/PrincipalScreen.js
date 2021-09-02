@@ -1,9 +1,23 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { UserScreen } from './UserScreen'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { UserScreen } from './UserScreen';
+import { useForm } from '../../hooks/useForm';
+
 
 export const PrincipalScreen = () => {
+
+    const [formValues, handleInputChange, reset] = useForm({
+        user: 'deydrums',
+    });
+
+    const {user} = formValues;
+
+    const handleSearchSubmit = (e) =>{
+        e.preventDefault();
+        console.log(formValues);
+    }
+
     return (
         <div className = 'p__container'>
             <div className = 'p__box'>
@@ -20,11 +34,14 @@ export const PrincipalScreen = () => {
                             <div className = "p__search-1">
                                 <FontAwesomeIcon icon={faSearch}/>
                             </div>
-                            <form className = "p__search-2">
+                            <form className = "p__search-2" onSubmit = {handleSearchSubmit}>
                                 <div className = "p__search-2-input">
                                     <input
                                         type="text"
                                         placeholder="Buscar usuario de GitHub..."
+                                        name = "user"
+                                        value = {user}
+                                        onChange = {handleInputChange}
                                     >
                                     
                                     </input>
