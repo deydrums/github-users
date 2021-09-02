@@ -244,3 +244,35 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) {
+
+    .p__box-3{
+        .p__box-3-c{
+            .p__box-3-container{
+                .p__box-3-b{
+                    justify-content: center;
+                    .p__blankspace{
+                        width: 0%;
+                    }
+                    .p__bio{
+                        width: 90%;
+                        height: 100%;
+                        p{
+                            margin-top: 10px;
+                        }
+                        .p__numbers{
+                            margin-top: 15px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+
+}
