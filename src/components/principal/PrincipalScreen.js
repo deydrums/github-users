@@ -68,7 +68,20 @@ export const PrincipalScreen = () => {
                                     try. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
                                     </p>
                                     <div className = "p__numbers">
-                                        
+                                        <div className = "p__numbers-c">
+                                            <div className = "p__numbers-col">
+                                                <h5>Repos</h5>
+                                                <h4>8</h4>
+                                            </div>
+                                            <div className = "p__numbers-col">
+                                                <h5>Fallowers</h5>
+                                                <h4>3938</h4>
+                                            </div>
+                                            <div className = "p__numbers-col">
+                                                <h5>Fallowing</h5>
+                                                <h4>9</h4>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className = "p__minfo">
