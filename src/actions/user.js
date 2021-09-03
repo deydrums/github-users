@@ -14,7 +14,6 @@ export const startSearchUser = (username = 'octocat') => {
         const body = await resp.json();
         dispatch(finishFetch());
         if(resp.ok) {
-            console.log(body)
             dispatch(setUser(body))
         }
     }
