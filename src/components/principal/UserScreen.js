@@ -1,7 +1,16 @@
-import React from 'react'
-import { assets } from '../../helpers/getAssets'
+import moment from 'moment';
+import React from 'react';
+import { assets } from '../../helpers/getAssets';
+
 
 export const UserScreen = (user) => {
+    moment.updateLocale('es', {
+        months: 'Enero_Febrero_Marzo_Abril_Mayo_Junio_Julio_Agosto_Septiembre_Octubre_Noviembre_Diciembre'.split('_'),
+        monthsShort: 'Enero._Feb._Mar_Abr._May_Jun_Jul._Ago_Sept._Oct._Nov._Dec.'.split('_'),
+        weekdays: 'Domingo_Lunes_Martes_Miercoles_Jueves_Viernes_Sabado'.split('_'),
+        weekdaysShort: 'Dom._Lun._Mar._Mier._Jue._Vier._Sab.'.split('_'),
+        weekdaysMin: 'Do_Lu_Ma_Mi_Ju_Vi_Sa'.split('_')
+      })
 
     return (
             <div className = "p__box-3-container">
@@ -28,7 +37,7 @@ export const UserScreen = (user) => {
                             
                             }</h1>
                         <h2>@{user.login}</h2>
-                        <h3>Unido 25 Junio 2011</h3>
+                        <h3>Unido en {moment(user.created_at).format('LL')}</h3>
                     </div>
                 </div>
                 <div className = "p__box-3-b">
