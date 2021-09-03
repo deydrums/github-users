@@ -92,7 +92,7 @@ export const PrincipalScreen = ({history}) => {
                                 {...user}
                                 />
                                 :
-                                <div className = "p__user-notfound"><i class="fas fa-exclamation-circle m-1"></i>El usuario no existe</div>
+                                <div className = "p__user-notfound"><i className="fas fa-exclamation-circle m-1"></i>El usuario no existe</div>
                         }
                     </div>
                 </div>
