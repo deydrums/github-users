@@ -1,5 +1,7 @@
 import React from 'react'
 import { assets } from '../../helpers/getAssets'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarked } from '@fortawesome/free-solid-svg-icons';
 
 export const UserScreen = (user) => {
 
@@ -57,11 +59,12 @@ export const UserScreen = (user) => {
 
                         <div className = "p__minfo">
                             <div className = "col">
-                                <h4>{user.location}</h4>
-                                <h4>{user.html_url}</h4>
+                                <h4><i className="fas fa-map-marker m-1"></i>{user.location}</h4>
+                                <h4><i class="fas fa-link m-1"></i>{user.html_url}</h4>
                             </div>
                             <div className = "col">
                                 <h4>
+                                <i class="fab fa-twitter m-1"></i> 
                                     {
                                         user.twitter_username 
                                         ?
