@@ -23,7 +23,13 @@ export const UserScreen = (user) => {
                     </div>
                     <div className = "p__bio">
                         <p>
-                            {user.bio}
+                            {
+                                user.bio 
+                                ?
+                                user.bio
+                                :
+                                <>Este usuario no posee descripcion.</>
+                            }
                         </p>
                         <div className = "p__numbers">
                             <div className = "p__numbers-c">
@@ -48,7 +54,15 @@ export const UserScreen = (user) => {
                                 <h4>{user.html_url}</h4>
                             </div>
                             <div className = "col">
-                                <h4>{user.twitter_username}</h4>
+                                <h4>
+                                    {
+                                        user.twitter_username 
+                                        ?
+                                        user.twitter_username 
+                                        :
+                                        <>No disponible.</>
+                                    }
+                                </h4>
                                 <h4>agithub</h4>   
                             </div>
                             
