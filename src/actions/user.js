@@ -6,7 +6,7 @@ import { finishFetch, startFetch } from "./ui";
 
 //startSearchUser ___________________________________________________________________________
 
-export const startSearchUser = ({username}) => {
+export const startSearchUser = ({username = "octocat"}) => {
     return async(dispatch) => {
         dispatch(unsetUser())
         dispatch(startFetch());

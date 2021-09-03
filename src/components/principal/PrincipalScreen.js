@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { UserScreen } from './UserScreen';
@@ -9,7 +9,13 @@ import { startSearchUser } from '../../actions/user';
 
 export const PrincipalScreen = () => {
 
+
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(startSearchUser(''))
+    }, [dispatch])
 
     const {fetch} = useSelector(state => state.ui)
     const {user} = useSelector(state => state.user)
@@ -24,6 +30,7 @@ export const PrincipalScreen = () => {
         e.preventDefault();
         dispatch(startSearchUser(formValues));
     }
+
     
     return (
         <div className = 'p__container'>
@@ -75,10 +82,14 @@ export const PrincipalScreen = () => {
                             fetch ?
                             <div className="loader"></div>
                             :
-                            <UserScreen 
-                            key={user.id}
-                            {...user}
-                            />
+                                user
+                                ?
+                                <UserScreen 
+                                key={user.id}
+                                {...user}
+                                />
+                                :
+                                <div>El usuario no existe</div>
                         }
                     </div>
                 </div>

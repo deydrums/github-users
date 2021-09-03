@@ -8,7 +8,14 @@ export const UserScreen = (user) => {
                 <div className = "p__box-3-a">
                     <div className = "p_box-img">
                         <div className = "p__img-cont">
-                            <img src = {assets(`./GitHub.png`).default} alt='profile-img'/>
+                            {
+                                user.avatar_url
+                                ?
+                                <img src = {user.avatar_url} alt='profile-img'/>
+                                :
+                                <img src = {assets(`./GitHub.png`).default} alt='profile-img'/>
+                            }
+                            
                         </div>
                     </div>
                     <div className = "p_box-usr-d">
