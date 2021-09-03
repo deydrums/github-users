@@ -1,17 +1,18 @@
 //*******************Actions user ******************* */
 import { fetchWithoutToken } from "../helpers/fetch";
 import { types } from "../types/types";
+import { finishFetch, startFetch } from "./ui";
 
 
-//errors msg ___________________________________________________________________________
+//startSearchUser ___________________________________________________________________________
 
 export const startSearchUser = ({user}) => {
     return async(dispatch) => {
         dispatch(unsetUser())
-        //dispatch(startFetch());
+        dispatch(startFetch());
         const resp = await fetchWithoutToken(`users/${user}`,'','GET');
         const body = await resp.json();
-        //dispatch(finishFetch());
+        dispatch(finishFetch());
         if(resp.ok) {
             console.log(body)
             dispatch(setUser(body))
