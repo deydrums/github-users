@@ -5,30 +5,33 @@ import { UserScreen } from './UserScreen';
 import { useForm } from '../../hooks/useForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { startSearchUser } from '../../actions/user';
+import queryString from 'query-string';
 
 
-export const PrincipalScreen = () => {
-
+export const PrincipalScreen = ({history}) => {
+    const {location} = history;
+    const {q = ''} = queryString.parse(location.search);
 
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(startSearchUser(''))
-    }, [dispatch])
+        q !== '' ? dispatch(startSearchUser(q)) : dispatch(startSearchUser())
+    }, [dispatch, q])
 
     const {fetch} = useSelector(state => state.ui)
     const {user} = useSelector(state => state.user)
 
-    const [formValues, handleInputChange, reset] = useForm({
-        username: 'deydrums',
+    const [formValues, handleInputChange] = useForm({
+        username: q,
     });
 
     const {username} = formValues;
 
     const handleSearchSubmit = (e) =>{
         e.preventDefault();
-        dispatch(startSearchUser(formValues));
+        history.push(`?q=${username}`);
+        dispatch(startSearchUser(username));
     }
 
     
