@@ -6,11 +6,11 @@ import { finishFetch, startFetch } from "./ui";
 
 //startSearchUser ___________________________________________________________________________
 
-export const startSearchUser = ({user}) => {
+export const startSearchUser = ({username}) => {
     return async(dispatch) => {
         dispatch(unsetUser())
         dispatch(startFetch());
-        const resp = await fetchWithoutToken(`users/${user}`,'','GET');
+        const resp = await fetchWithoutToken(`users/${username}`,'','GET');
         const body = await resp.json();
         dispatch(finishFetch());
         if(resp.ok) {

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { UserScreen } from './UserScreen';
 import { useForm } from '../../hooks/useForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { startSearchUser } from '../../actions/user';
 
 
@@ -11,18 +11,20 @@ export const PrincipalScreen = () => {
 
     const dispatch = useDispatch();
 
+    const {fetch} = useSelector(state => state.ui)
+    const {user} = useSelector(state => state.user)
+
     const [formValues, handleInputChange, reset] = useForm({
-        user: 'deydrums',
+        username: 'deydrums',
     });
 
-    const {user} = formValues;
+    const {username} = formValues;
 
     const handleSearchSubmit = (e) =>{
         e.preventDefault();
-        console.log(formValues);
         dispatch(startSearchUser(formValues));
     }
-
+    
     return (
         <div className = 'p__container'>
             <div className = 'p__box'>
@@ -44,8 +46,8 @@ export const PrincipalScreen = () => {
                                     <input
                                         type="text"
                                         placeholder="Buscar usuario de GitHub..."
-                                        name = "user"
-                                        value = {user}
+                                        name = "username"
+                                        value = {username}
                                         onChange = {handleInputChange}
                                     >
                                     
@@ -55,7 +57,7 @@ export const PrincipalScreen = () => {
                                     <button
                                         type="submit"
                                         className="btn btn-submit"
-                                        disabled={!user}
+                                        disabled={!username}
                                     >
                                         Buscar
                                     </button>
@@ -69,8 +71,15 @@ export const PrincipalScreen = () => {
 
                 <div className ="p__box-c p__box-3">
                     <div className = "p__box-3-c">
-                        <UserScreen></UserScreen>
-                        {/* <div className="loader"></div> */}
+                        {
+                            fetch ?
+                            <div className="loader"></div>
+                            :
+                            <UserScreen 
+                            key={user.id}
+                            {...user}
+                            />
+                        }
                     </div>
                 </div>
 
