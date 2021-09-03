@@ -41,7 +41,7 @@ export const PrincipalScreen = ({history}) => {
                 <div className ="p__box-c p__box-1">
                     <div className = "p__box-1-c">
                         <h2>GitHubUsers</h2>
-                        <h3>LIGHT <FontAwesomeIcon icon={faSun} /></h3>
+                        {/* <h3>LIGHT <FontAwesomeIcon icon={faSun} /></h3> */}
                     </div>
                 </div>
 
