@@ -1,7 +1,5 @@
 import React from 'react'
 import { assets } from '../../helpers/getAssets'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarked } from '@fortawesome/free-solid-svg-icons';
 
 export const UserScreen = (user) => {
 
@@ -21,7 +19,14 @@ export const UserScreen = (user) => {
                         </div>
                     </div>
                     <div className = "p_box-usr-d">
-                        <h1>{user.name}</h1>
+                        <h1>{
+                            user.name
+                            ?
+                            user.name
+                            :
+                            <>Sin Nombre</>
+                            
+                            }</h1>
                         <h2>@{user.login}</h2>
                         <h3>Unido 25 Junio 2011</h3>
                     </div>
@@ -59,21 +64,48 @@ export const UserScreen = (user) => {
 
                         <div className = "p__minfo">
                             <div className = "col">
-                                <h4><i className="fas fa-map-marker m-1"></i>{user.location}</h4>
-                                <h4><i class="fas fa-link m-1"></i>{user.html_url}</h4>
+                                <h4>
+                                    <i className="fas fa-map-marker m-1"></i>
+                                    {
+                                        user.location
+                                        ?
+                                        user.location
+                                        :
+                                        <>No disponible</>
+                                    }
+                                </h4>
+                                <h4>
+                                    <i className="fas fa-link m-1"></i>
+                                    <a href={user.html_url} target="_blank" rel="noreferrer">
+                                        {user.html_url.split("https://github.com")}
+                                    </a>
+                                </h4>
                             </div>
                             <div className = "col">
                                 <h4>
-                                <i class="fab fa-twitter m-1"></i> 
+                                <i className="fab fa-twitter m-1"></i> 
                                     {
                                         user.twitter_username 
                                         ?
-                                        user.twitter_username 
+                                        <a href={`https://twitter.com/${user.twitter_username}`} target="_blank" rel="noreferrer">
+                                            {user.twitter_username }
+                                        </a>
                                         :
-                                        <>No disponible.</>
+                                        <>No disponible</>
                                     }
                                 </h4>
-                                <h4>agithub</h4>   
+                                <h4>
+                                    <i className="fas fa-globe m-1"></i> 
+                                    {
+                                        user.blog
+                                        ?
+                                        <a href={user.blog} target="_blank" rel="noreferrer">
+                                            website
+                                        </a>
+                                        :
+                                        <>No disponible</>
+                                    } 
+                                </h4>   
                             </div>
                             
                         </div>

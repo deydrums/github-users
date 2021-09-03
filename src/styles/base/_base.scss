@@ -125,3 +125,11 @@
 .h-30{
     height: 20% !important;
 }
+
+a{
+    color: $white;
+    text-decoration: none;
+    &:hover{
+        color: darken($color: $white, $amount: 10);
+    }
+}
